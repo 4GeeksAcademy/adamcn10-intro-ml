@@ -5,16 +5,6 @@ from sklearn.metrics import mean_squared_error, root_mean_squared_error, r2_scor
 from sklearn.metrics import median_absolute_error, mean_absolute_percentage_error
 from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score
 
-# load the .env file variables
-load_dotenv()
-
-
-def db_connect():
-    import os
-    engine = create_engine(os.getenv('DATABASE_URL'))
-    engine.connect()
-    return engine
-
 
 def get_regression_metrics(y_predict_test, y_test, y_predict_train, y_train):
     '''
